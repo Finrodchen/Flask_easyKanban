@@ -1,0 +1,64 @@
+{% extends 'base.html' %}  <!-- 指定參照的基底網頁 -->
+
+{% block head %}  <!-- head區塊開始 -->
+
+    <title>簡易公佈欄 by Finrodchen</title>
+
+{% endblock %}  <!-- head區塊結束 -->
+
+{% block body %}  <!-- body區塊開始 -->
+
+    <h1 style="text-align: center;">
+        重要事項公告欄  <!-- h1標題 -->
+    </h1>
+
+    <table border='1' align='center'>
+        <tr>  <!-- 表格表頭 -->
+            <th>公告事項</th>
+            <th>說明</th>
+            <th>公告人</th>
+            <th>建立時間</th>
+            <th>操作</th>
+        </tr>
+        <tr>  
+            <!-- 
+            這裡我先填入內容，下一篇文章導入資料庫
+            的時候會改為讀取資料庫中的內容。
+            -->
+            <td>公告001</td>
+            <td>這是公告001的說明</td>
+            <td>小明</td>
+            <td>2020/06/08</td>
+            <td>
+                刪除
+                <br>
+                更新
+            </td>
+        </tr>
+    </table>
+
+    <br>
+    <hr>
+    <br>
+
+    <form align='center'>
+        <!--
+        分別建立3個要輸入的項目
+        在input標籤中定義輸入屬性為文字
+        給予欄位名稱及ID標記(用於對應資料庫內容)
+        最後在placeholder屬性中提示使用者應填寫的資訊
+        -->
+        <label for="title">公告事項</label><br>
+        <input type="text" name="title" id="title" placeholder="請輸入公告事項"><br><br>
+        
+        <label for="content">公告說明</label><br>
+        <input type="text" name="content" id="content" placeholder="請輸入公告說明"><br><br>
+        
+        <label for="person">公告人</label><br>
+        <input type="text" name="person" id="person" placeholder="請輸入公告發佈人"><br><br>
+        
+        <input type="submit" value="新增公告事項">
+
+    </form>
+      
+{% endblock %}  <!-- body區塊結束 -->
